@@ -10,6 +10,7 @@ window = sg.Window("My To-Do App",
                            [input_box, add_button]]
                    )
 window.read()
+print("Hello") # gets printed in the console once the application is closed.
 window.close()
 
 
