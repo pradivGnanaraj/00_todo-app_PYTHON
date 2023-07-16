@@ -1,9 +1,0 @@
-collect phone
-check waternew itemnew itemtesting boundary cases
-adding a new test case
-another case
-new case now
-bug fixing
-new test case
-master pthon
-testing the add button
