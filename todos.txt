@@ -1,0 +1,6 @@
+checking today
+checking today 2
+new todo testing
+ (updated this)just in case
+add button is working fine and list is updated
+on selection the todo list is changed
