@@ -31,7 +31,7 @@ window = PySG.Window("My To-Do App",
 
 while True:
     event, values = window.read(timeout=200)
-    window['clock'].update(value=time.strftime("%b %d, %Y :::Time::  %H:%M:%S ")
+    window['clock'].update(value=time.strftime("%b %d, %Y :::Time::  %H:%M:%S "))
 
     match event:
         case "Add":
@@ -53,25 +53,24 @@ while True:
             except IndexError:
                 PySG.popup("Please select an item first", font=("Helvetica", 20))
 
-        case "todos":
-            window['todo'].update(value=values['todos'][0])
-
         case "Complete":
             try:
                 todo_to_complete = values['todos'][0]
                 todos = functions.get_todos()
                 todos.remove(todo_to_complete)
-                functions.write_todos()
+                functions.write_todos(todos)
                 window['todos'].update(values=todos)
-                window['todo'].update(values='')
+                window['todo'].update(value='')
             except IndexError:
                 PySG.popup("Please select an item first", font=("Helvetica", 20))
 
         case "Exit":
             break
 
+        case "todos":
+            window['todo'].update(value=values['todos'][0])
+
         case PySG.WIN_CLOSED:
             break
-
 
 window.close()

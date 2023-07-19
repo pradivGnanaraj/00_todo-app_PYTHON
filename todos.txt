@@ -1,8 +1,5 @@
-checking today
-checking today 2
-changed using edit button (updated this)just in case
-add button is working fine and list is updated
-clear lineAdding final test for add and edit button
-Adding final test for add and edit button
- problem linethis is a very long line to check the todo list, sometimes the lines are getting merged
-checking the buttons 
+new 
+second test
+edit test
+ completedsecond test
+ 2
