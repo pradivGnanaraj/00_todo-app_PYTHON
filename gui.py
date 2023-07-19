@@ -10,12 +10,15 @@ list_box = PySG.Listbox(values=functions.get_todos(),
                         size=[45, 10]
                         )
 edit_button = PySG.Button("Edit")
+complete_button = PySG.Button("Complete")
+exit_button = PySG.Button("Exit")
 
 window = PySG.Window("My To-Do App",
                      layout=[
                          [label],
                          [input_box, add_button],
-                         [list_box, edit_button]
+                         [list_box, edit_button, complete_button],
+                         [exit_button]
                      ],
                      font=('Helvetica', 20)
                      )
@@ -44,6 +47,17 @@ while True:
 
         case "todos":
             window['todo'].update(value=values['todos'][0])
+
+        case "Complete":
+            todo_to_complete = values['todos'][0]
+            todos = functions.get_todos()
+            todos.remove(todo_to_complete)
+            functions.write_todos()
+            window['todos'].update(values=todos)
+            window['todo'].update(values='')
+
+        case "Exit":
+            break
 
         case PySG.WIN_CLOSED:
             break
